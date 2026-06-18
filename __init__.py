@@ -12,7 +12,7 @@ from time import sleep
 from albert import *
 import translators as ts
 
-md_iid = "5.0"
+md_iid = "6.0"
 md_version = "2.2.2"
 md_name = "Translator"
 md_description = "Translate text using online translators"
@@ -102,7 +102,7 @@ class Plugin(PluginInstance, GeneratorQueryHandler):
 
         for _ in range(50):
             sleep(0.01)
-            if not ctx.isValid:
+            if not ctx.is_valid:
                 return []
 
         if len(splits := query.split(maxsplit=2)) == 3 \
