@@ -37,7 +37,8 @@ class Plugin(PluginInstance, GeneratorQueryHandler):
         if self._lang is None:
             self._lang = getdefaultlocale()[0][0:2]
 
-        self.src_languages = self.dst_languages = set()
+        self.src_languages = set()
+        self.dst_languages = set()
         try:
             languages = ts.get_languages(self.translator)
             self.src_languages = set(languages.keys())
