@@ -95,7 +95,7 @@ class Plugin(PluginInstance, GeneratorQueryHandler):
         ]
 
     def synopsis(self, s):
-        return "[[from] to] text"
+        return "[[from] to] text" if (self.src_languages and self.dst_languages) else "<text>"
 
     def items(self, ctx):
         query = ctx.query.strip()
